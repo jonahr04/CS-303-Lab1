@@ -1,33 +1,138 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font: 16px/1.5 Arial, sans-serif;
+    font: calc(14px + 0.3vw)/1.5 'Roboto', Arial, sans-serif;
     background: #c26b07;
 }
 
 div {
     width: 80vw;
     margin: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 main {
     min-height: 100vh;
+    flex: 1;
+    padding: 1.5rem;
 }
 
 header, footer {
     background: #744414;
+    padding: 1.5rem;
+}
+
+header {
+    flex: 0 0 auto;
+}
+
+footer {
+    flex: 1 1 100%;
+}
+
+h1, h2 {
+    font-family: 'Creepster', Arial, cursive;
+}
+
+h1 {
+    font-size: calc(1.6rem + 1vw);
+}
+
+h2 {
+    font-size: calc(1.2rem + 0.6vw);
 }
 
 img {
     max-width: 80%;
+    height: auto;
     margin: auto;
+    display: block;
 }
 
 nav ul {
     display: flex;
+    flex-direction: column;
     align-items: center;
     margin: auto;
     gap: 50px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: nowrap;
+}
+
+nav a {
+    color: #ff1a1a;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: calc(14px + 0.2vw);
+}
+
+.hidden {
+    display: none;
+}
+
+#scary:not(.hidden) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#scary:not(.hidden) h2,
+#scary:not(.hidden) p {
+    flex: 1 1 100%;
+}
+
+#scaryBtn {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background: #1a0000;
+    color: #ff1a1a;
+    border: 3px solid #ff1a1a;
+    cursor: pointer;
+    font-size: calc(1rem + 0.3vw);
+}
+
+@media (max-width: 1000px) {
+    div {
+        width: 95vw;
+        padding: 0.75rem;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    main {
+        min-height: auto;
+        padding: 0.75rem;
+    }
+
+    header, footer {
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: nowrap;
+    }
+
+    #scary:not(.hidden) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scaryBtn {
+        margin: 1rem auto;
+        padding: 0.5rem 1rem;
+    }
 }
